@@ -17,6 +17,9 @@
   ],
   "author": "Siva Barath S",
   "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
   "devDependencies": {
     "vite": "^5.2.11"
   }
