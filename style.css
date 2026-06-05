@@ -621,6 +621,10 @@ ul {
     -webkit-backdrop-filter: blur(10px);
 }
 
+.skills-card.span-2 {
+    grid-column: span 2;
+}
+
 .skills-card:hover {
     border-color: var(--border-color-hover);
     background-color: rgba(14, 14, 20, 0.6);
@@ -1579,7 +1583,7 @@ ul {
    ========================================================================== */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.05fr 1px 0.95fr;
     gap: var(--space-xxl);
     background-color: rgba(8, 8, 12, 0.45);
     border: 1px solid var(--border-color);
@@ -1594,17 +1598,36 @@ ul {
     flex-direction: column;
 }
 
+.contact-info-block .section-title {
+    margin-bottom: 24px;
+}
+
+.contact-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    width: fit-content;
+}
+
 .contact-intro {
     font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 32px;
     line-height: 1.6;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: 28px;
 }
 
 .contact-item {
@@ -1614,20 +1637,26 @@ ul {
 }
 
 .contact-icon-wrapper {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: var(--border-radius-sm);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(139, 92, 246, 0.25);
     background-color: rgba(14, 14, 20, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
+    color: #8b5cf6;
+    transition: var(--transition-smooth);
+}
+
+.contact-icon-wrapper:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
 }
 
 .contact-icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 .contact-text {
@@ -1651,7 +1680,17 @@ ul {
 }
 
 .contact-text a.value:hover {
-    color: var(--accent-color);
+    color: #8b5cf6;
+}
+
+.contact-divider {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        transparent,
+        rgba(139, 92, 246, 0.2),
+        transparent
+    );
 }
 
 .contact-links-block {
@@ -1662,13 +1701,8 @@ ul {
 .contact-links-block h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.contact-links-block p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 16px;
+    color: var(--text-primary);
 }
 
 .contact-links-grid {
@@ -1685,22 +1719,22 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: var(--transition-smooth);
+    transition: all 0.3s ease;
 }
 
 .contact-link-card:hover {
-    border-color: var(--border-color-hover);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
 }
 
 .contact-link-card.highlight {
-    border-color: rgba(99, 102, 241, 0.18);
-    background-color: rgba(99, 102, 241, 0.02);
+    border-color: rgba(139, 92, 246, 0.18);
+    background-color: rgba(139, 92, 246, 0.02);
 }
 
 .contact-link-card.highlight:hover {
-    border-color: rgba(99, 102, 241, 0.35);
-    background-color: rgba(99, 102, 241, 0.05);
+    background-color: rgba(139, 92, 246, 0.04);
 }
 
 .link-card-title {
@@ -1716,7 +1750,7 @@ ul {
 }
 
 .contact-link-card.highlight .link-card-title {
-    color: #818cf8;
+    color: #a5b4fc;
 }
 
 /* ==========================================================================
@@ -1954,10 +1988,18 @@ ul {
         grid-template-columns: 1fr;
     }
     
+    .skills-card.span-2 {
+        grid-column: span 1;
+    }
+    
     .contact-container {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
         padding: var(--space-xl);
+    }
+    
+    .contact-divider {
+        display: none;
     }
     
     .section-title {
